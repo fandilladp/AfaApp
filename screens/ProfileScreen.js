@@ -33,9 +33,8 @@ const ProfileScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-
       <View style={styles.userInfoSection}>
-        <View style={{flexDirection: 'row', marginTop: 15}}>
+        <View style={{flexDirection: 'row', marginTop: 3}}>
           <Avatar.Image 
             source={{
               uri: 'https://api.adorable.io/avatars/80/abott@adorable.png',
@@ -54,15 +53,7 @@ const ProfileScreen = () => {
       <View style={styles.userInfoSection}>
         <View style={styles.row}>
           <Icon name="map-marker-radius" color="#777777" size={20}/>
-          <Text style={{color:"#777777", marginLeft: 20}}>Kolkata, India</Text>
-        </View>
-        <View style={styles.row}>
-          <Icon name="phone" color="#777777" size={20}/>
-          <Text style={{color:"#777777", marginLeft: 20}}>+91-900000009</Text>
-        </View>
-        <View style={styles.row}>
-          <Icon name="email" color="#777777" size={20}/>
-          <Text style={{color:"#777777", marginLeft: 20}}>john_doe@email.com</Text>
+          <Text style={{color:"#777777", marginLeft: 20}}>Institut Tekologi Sumatera</Text>
         </View>
       </View>
 
@@ -71,8 +62,8 @@ const ProfileScreen = () => {
             borderRightColor: '#dddddd',
             borderRightWidth: 1
           }]}>
-            <Title>1900 Liter</Title>
-            <Caption>Hemat Air Bulan ini</Caption>
+            <Title>90 Liter</Title>
+            <Caption>Penggunaan Air Bulan ini</Caption>
           </View>
           <View style={styles.infoBox}>
             <Title>7</Title>
@@ -97,12 +88,6 @@ const ProfileScreen = () => {
           <View style={styles.menuItem}>
             <Icon name="account-check-outline" color="#FF6347" size={25}/>
             <Text style={styles.menuItemText}>Support</Text>
-          </View>
-        </TouchableRipple>
-        <TouchableRipple onPress={() => {}}>
-          <View style={styles.menuItem}>
-            <Icon name="settings-outline" color="#FF6347" size={25}/>
-            <Text style={styles.menuItemText}>Settings</Text>
           </View>
         </TouchableRipple>
       </View>

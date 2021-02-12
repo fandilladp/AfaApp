@@ -9,7 +9,17 @@ import {
   ScrollView,
   Animated,
   Fragment,
+  Dimensions
 } from 'react-native';
+import {
+  LineChart,
+  BarChart,
+  PieChart,
+  ProgressChart,
+  ContributionGraph,
+  StackedBarChart
+} from "react-native-chart-kit";
+
 import {useTheme} from '@react-navigation/native';
 
 import Swiper from 'react-native-swiper';
@@ -32,7 +42,7 @@ const HomeScreen = ({navigation}) => {
 
   return (
     <View style={{flex: 1}}>
-      <View style={[styles.section, {height: 250}]}>
+      <View style={[styles.section, {height: 170}]}>
         <MapView
           provider={PROVIDER_GOOGLE}
           style={{flex: 1}}
@@ -53,7 +63,54 @@ const HomeScreen = ({navigation}) => {
           />
         </MapView>
       </View>
-      <View style={styles.container} />
+      <View style={styles.container}>
+        <View>
+          <Text style={{fontWeight:'bold', marginLeft: 10}}>Debit Air Perhari</Text>
+          <LineChart
+            data={{
+              labels: ["Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu"],
+              datasets: [
+                {
+                  data: [
+                    Math.random() * 100,
+                    Math.random() * 100,
+                    Math.random() * 100,
+                    Math.random() * 100,
+                    Math.random() * 100,
+                    Math.random() * 100
+                  ]
+                }
+              ]
+            }}
+            width={Dimensions.get("window").width} // from react-native
+            height={220}
+            yAxisLabel=""
+            yAxisSuffix="L"
+            yAxisInterval={1} // optional, defaults to 1
+            chartConfig={{
+              backgroundColor: "#6201EE",
+              backgroundGradientFrom: "#6201EE",
+              backgroundGradientTo: "#8440E6",
+              decimalPlaces: 2, // optional, defaults to 2dp
+              color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+              labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+              style: {
+                borderRadius: 16
+              },
+              propsForDots: {
+                r: "6",
+                strokeWidth: "3",
+                stroke: "#ffa726"
+              }
+            }}
+            bezier
+            style={{
+              marginVertical: 8,
+              borderRadius: 16
+            }}
+          />
+        </View>
+      </View>
       <View style={{height: 130}}>
         <ScrollView
           horizontal
@@ -74,6 +131,7 @@ const HomeScreen = ({navigation}) => {
           {state.hardware.map((devices, index) => (
             <View style={styles.card}>
               <Text style={styles.cardTitle}>{devices.title}</Text>
+              <Text style={styles.cardKondisi}>{devices.kondisi}</Text>
               <View style={styles.button}>
                 
                 <TouchableOpacity
@@ -82,7 +140,7 @@ const HomeScreen = ({navigation}) => {
                   style={[styles.signIn, {
                     borderColor: 'white',
                     borderWidth: 1,
-                    marginTop: 20
+                    marginTop: 10
                   }]}
                 >
                   <Text style={[styles.textSign, {
@@ -111,7 +169,7 @@ const styles = StyleSheet.create({
     marginTop: 13,
     marginBottom: 2,
     borderRadius: 8,
-    backgroundColor: 'grey',
+    backgroundColor: '#FC900D',
     marginHorizontal: 10,
     shadowColor: '#000',
     shadowRadius: 5,
@@ -122,6 +180,14 @@ const styles = StyleSheet.create({
   cardTitle: {
     textAlign: 'center',
     fontSize: 19,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  cardKondisi: {
+    marginTop:5,
+    justifyContent:'center',
+    textAlign: 'center',
+    fontSize: 12,
     fontWeight: 'bold',
     color: 'white',
   },

@@ -13,6 +13,7 @@ import {SwipeListView} from 'react-native-swipe-list-view';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import Notifications from '../model/Notifications';
+import Tips from './Tips';
 
 const NotificationScreen = ({navigation}) => {
   const [listData, setListData] = useState(
@@ -204,27 +205,28 @@ const NotificationScreen = ({navigation}) => {
   };
 
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle="dark-content"/>
-      {/* <StatusBar backgroundColor="#FF6347" barStyle="light-content"/> */}
-      <SwipeListView
-        data={listData}
-        renderItem={renderItem}
-        renderHiddenItem={renderHiddenItem}
-        leftOpenValue={75}
-        rightOpenValue={-150}
-        disableRightSwipe
-        onRowDidOpen={onRowDidOpen}
-        leftActivationValue={100}
-        rightActivationValue={-200}
-        leftActionValue={0}
-        rightActionValue={-500}
-        onLeftAction={onLeftAction}
-        onRightAction={onRightAction}
-        onLeftActionStatusChange={onLeftActionStatusChange}
-        onRightActionStatusChange={onRightActionStatusChange}
-      />
-    </View>
+    <Tips/>
+    // <View style={styles.container}>
+    //   <StatusBar barStyle="dark-content"/>
+    //   {/* <StatusBar backgroundColor="#FF6347" barStyle="light-content"/> */}
+    //   <SwipeListView
+    //     data={listData}
+    //     renderItem={renderItem}
+    //     renderHiddenItem={renderHiddenItem}
+    //     leftOpenValue={75}
+    //     rightOpenValue={-150}
+    //     disableRightSwipe
+    //     onRowDidOpen={onRowDidOpen}
+    //     leftActivationValue={100}
+    //     rightActivationValue={-200}
+    //     leftActionValue={0}
+    //     rightActionValue={-500}
+    //     onLeftAction={onLeftAction}
+    //     onRightAction={onRightAction}
+    //     onLeftActionStatusChange={onLeftActionStatusChange}
+    //     onRightActionStatusChange={onRightActionStatusChange}
+    //   />
+    // </View>
   );
 };
 

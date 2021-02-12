@@ -37,7 +37,7 @@ const CardItemDetails = ({route}) => {
             <Text style={styles.imageTitle}>{itemData.title}</Text>
           </View>
         )}>
-        <View style={[styles.section, {height: 250}]}>
+        <View style={[styles.section, {height: 230}]}>
           <MapView
             provider={PROVIDER_GOOGLE}
             style={{flex: 1}}
@@ -64,7 +64,8 @@ const CardItemDetails = ({route}) => {
           style={{
             justifyContent: 'center',
             alignItems: 'center',
-            marginTop: 20,
+            marginTop: 17,
+            flex:1
           }}>
           <View style={styles.button}>
             <TouchableOpacity
@@ -157,6 +158,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   titleContainer: {
+    backgroundColor: '#8440E6',
     flex: 1,
     alignSelf: 'stretch',
     justifyContent: 'center',

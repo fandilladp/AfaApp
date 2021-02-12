@@ -88,7 +88,7 @@ const HomeStackScreen = ({navigation}) => {
               <Icon.Button
                 name="ios-menu"
                 size={25}
-                color={colors.text}
+                color={'#8440E6'}
                 backgroundColor={colors.background}
                 onPress={() => navigation.openDrawer()}
               />
@@ -99,7 +99,7 @@ const HomeStackScreen = ({navigation}) => {
               <Icon.Button
                 name="ios-search"
                 size={25}
-                color={colors.text}
+                color={'#8440E6'}
                 backgroundColor={colors.background}
                 onPress={() => {}}
               />
@@ -147,7 +147,7 @@ const NotificationStackScreen = ({navigation}) => (
   <NotificationStack.Navigator
     screenOptions={{
       headerStyle: {
-        backgroundColor: '#1f65ff',
+        backgroundColor: '#8440E6',
       },
       headerTintColor: '#fff',
       headerTitleStyle: {
@@ -155,14 +155,14 @@ const NotificationStackScreen = ({navigation}) => (
       },
     }}>
     <NotificationStack.Screen
-      name="Notifications"
+      name="Tips Hemat Air"
       component={NotificationScreen}
       options={{
         headerLeft: () => (
           <Icon.Button
             name="ios-menu"
             size={25}
-            backgroundColor="#1f65ff"
+            backgroundColor="#8440E6"
             onPress={() => navigation.openDrawer()}
           />
         ),
@@ -204,9 +204,9 @@ const ProfileStackScreen = ({navigation}) => {
             <View style={{marginRight: 10}}>
               <MaterialCommunityIcons.Button
                 name="account-edit"
-                size={25}
+                size={20}
                 backgroundColor={colors.background}
-                color={colors.text}
+                color={'black'}
                 onPress={() => navigation.navigate('EditProfile')}
               />
             </View>

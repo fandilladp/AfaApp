@@ -6,6 +6,7 @@
         longitude: 88.4354486,
       },
       title: 'Keran Masjid',
+      desc: 'normal',
       waterflow: 100,
     },
     {
@@ -15,6 +16,7 @@
         longitude: 88.4377279,
       },
       title: 'Keran Gedung A',
+      desc: 'normal',
       waterflow: 100,
     },
     {
@@ -24,6 +26,7 @@
         longitude: 88.4410113,
       },
       title: 'Keran Gedung B',
+      desc: 'normal',
       waterflow: 100,
     },
     {
@@ -33,6 +36,7 @@
         longitude: 88.4497463,
       },
       title: 'Keran Gedung C',
+      desc: 'normal',
       waterflow: 100,
     },
     {
@@ -42,6 +46,7 @@
         longitude: 88.444781,
       },
       title: 'Asrama Putra',
+      desc: 'normal',
       waterflow: 100,
     },
     {
@@ -51,6 +56,7 @@
         longitude: 88.4354486,
       },
       title: 'Asrama Putri',
+      desc: 'normal',
       waterflow: 100,
     },
     {
@@ -60,6 +66,7 @@
         longitude: 88.4377279,
       },
       title: 'Kantor ',
+      desc: 'normal',
       waterflow: 100,
     },
   ];
