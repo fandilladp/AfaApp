@@ -198,6 +198,7 @@ const ProfileStackScreen = ({navigation}) => {
                 color={colors.text}
                 onPress={() => navigation.openDrawer()}
               />
+              
             </View>
           ),
           headerRight: () => (

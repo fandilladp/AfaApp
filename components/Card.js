@@ -1,16 +1,13 @@
 import React from 'react';
 import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
 
-import StarRating from './StarRating';
-
 const Card = ({itemData, onPress}) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.card}>
         <View style={styles.cardInfo}>
           <Text style={styles.cardTitle}>{itemData.title}</Text>
-          <StarRating ratings={itemData.ratings} reviews={itemData.reviews} />
-          <Text numberOfLines={2} style={styles.cardDetails}>{itemData.description}</Text>
+          <Text style={styles.cardKondisi}>{itemData.kondisi}</Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -21,36 +18,33 @@ export default Card;
 
 const styles = StyleSheet.create({
   card: {
+    width: 150,
     height: 100,
-    marginVertical: 10,
-    flexDirection: 'row',
-    shadowColor: '#999',
-    shadowOffset: {width: 0, height: 1},
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    elevation: 5
-  },
-  cardImgWrapper: {
-    flex: 1,
-  },
-  cardImg: {
-    height: '100%',
-    width: '100%',
-    alignSelf: 'center',
+    elevation: 2,
+    marginTop: 13,
+    marginBottom: 2,
     borderRadius: 8,
-    borderBottomRightRadius: 0,
-    borderTopRightRadius: 0,
-  },
-  cardInfo: {
-    flex: 2,
-    padding: 10,
-    borderColor: '#ccc',
-    borderWidth: 1,
-    borderRadius: 8,
-    backgroundColor: '#fff',
+    backgroundColor: '#FC900D',
+    marginHorizontal: 10,
+    shadowColor: '#000',
+    shadowRadius: 5,
+    shadowOpacity: 0.3,
+    shadowOffset: {x: 2, y: -2},
+    overflow: 'hidden',
   },
   cardTitle: {
+    textAlign: 'center',
+    fontSize: 19,
     fontWeight: 'bold',
+    color: 'white',
+  },
+  cardKondisi: {
+    marginTop: 5,
+    justifyContent: 'center',
+    textAlign: 'center',
+    fontSize: 12,
+    fontWeight: 'bold',
+    color: 'white',
   },
   cardDetails: {
     fontSize: 12,

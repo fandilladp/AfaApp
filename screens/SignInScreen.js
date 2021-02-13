@@ -114,7 +114,7 @@ const SignInScreen = ({navigation}) => {
 
     return (
       <View style={styles.container}>
-          <StatusBar backgroundColor='#FF6347' barStyle="light-content"/>
+          <StatusBar backgroundColor='#8440E6' barStyle="light-content"/>
         <View style={styles.header}>
             <Text style={styles.text_header}>Welcome!</Text>
         </View>
@@ -208,7 +208,7 @@ const SignInScreen = ({navigation}) => {
             
 
             <TouchableOpacity>
-                <Text style={{color: '#FF6347', marginTop:15}}>Forgot password?</Text>
+                <Text style={{color: '#6201EE', marginTop:15}}>Forgot password?</Text>
             </TouchableOpacity>
             <View style={styles.button}>
                 <TouchableOpacity
@@ -216,7 +216,7 @@ const SignInScreen = ({navigation}) => {
                     onPress={() => {loginHandle( data.username, data.password )}}
                 >
                 <LinearGradient
-                    colors={['#FFA07A', '#FF6347']}
+                    colors={['#6201EE', '#8440E6']}
                     style={styles.signIn}
                 >
                     <Text style={[styles.textSign, {
@@ -228,13 +228,13 @@ const SignInScreen = ({navigation}) => {
                 <TouchableOpacity
                     onPress={() => navigation.navigate('SignUpScreen')}
                     style={[styles.signIn, {
-                        borderColor: '#FF6347',
+                        borderColor: '#8440E6',
                         borderWidth: 1,
                         marginTop: 15
                     }]}
                 >
                     <Text style={[styles.textSign, {
-                        color: '#FF6347'
+                        color: '#8440E6'
                     }]}>Sign Up</Text>
                 </TouchableOpacity>
             </View>
@@ -248,7 +248,7 @@ export default SignInScreen;
 const styles = StyleSheet.create({
     container: {
       flex: 1, 
-      backgroundColor: '#FF6347'
+      backgroundColor: '#fff'
     },
     header: {
         flex: 1,
@@ -265,7 +265,7 @@ const styles = StyleSheet.create({
         paddingVertical: 30
     },
     text_header: {
-        color: '#fff',
+        color: '#6201EE',
         fontWeight: 'bold',
         fontSize: 30
     },

@@ -16,6 +16,7 @@ import HeaderImageScrollView, {
 import * as Animatable from 'react-native-animatable';
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import axios from 'axios';
 
 const MIN_HEIGHT = Platform.OS === 'ios' ? 90 : 55;
 const MAX_HEIGHT = 350;
@@ -24,6 +25,94 @@ const CardItemDetails = ({route}) => {
   const itemData = route.params.itemData;
   const navTitleView = useRef(null);
 
+  const [servoPosisi, setServoPosisi] = React.useState({
+    coordinate: {
+      latitude: 0,
+      longitude: 0,
+    },
+    title: '',
+    desc: '',
+    waterflow: 0,
+  });
+
+  const handlerLow = () => {
+    axios
+      .put('https://afaapp.herokuapp.com/posts/0', {
+        coordinate: {
+          latitude: 0,
+          longitude: 0,
+        },
+        title: '',
+        desc: 'low',
+        waterflow: 20,
+      })
+      .then(function(response) {
+       setServoPosisi({
+        coordinate: {
+          latitude: 0,
+          longitude: 0,
+        },
+        title: '',
+        desc: 'low',
+        waterflow: 20,
+       })
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  };
+  const handlerNormal = () => {
+    axios
+      .put('https://afaapp.herokuapp.com/posts/0', {
+        coordinate: {
+          latitude: 0,
+          longitude: 0,
+        },
+        title: '',
+        desc: 'normal',
+        waterflow: 40,
+      })
+      .then(function(response) {
+       setServoPosisi({
+        coordinate: {
+          latitude: 0,
+          longitude: 0,
+        },
+        title: '',
+        desc: 'normal',
+        waterflow: 40,
+       })
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  };
+  const handlerHigh = () => {
+    axios
+    .put('https://afaapp.herokuapp.com/posts/0', {
+      coordinate: {
+        latitude: 0,
+        longitude: 0,
+      },
+      title: '',
+      desc: 'High',
+      waterflow: 60,
+    })
+    .then(function(response) {
+     setServoPosisi({
+      coordinate: {
+        latitude: 0,
+        longitude: 0,
+      },
+      title: '',
+      desc: 'High',
+      waterflow: 60,
+     })
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+  };
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
@@ -58,18 +147,22 @@ const CardItemDetails = ({route}) => {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <Text style={{fontSize: 50}}>{itemData.waterflow} Liter/Menit</Text>
+          <Text style={{fontSize: 50}}>
+            {servoPosisi.waterflow} Liter/Menit
+          </Text>
         </View>
         <View
           style={{
             justifyContent: 'center',
             alignItems: 'center',
             marginTop: 17,
-            flex:1
+            flex: 1,
           }}>
           <View style={styles.button}>
             <TouchableOpacity
-              onPress={() => {}}
+              onPress={() => {
+                handlerLow();
+              }}
               style={[
                 styles.signIn,
                 {
@@ -89,7 +182,9 @@ const CardItemDetails = ({route}) => {
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => {}}
+              onPress={() => {
+                handlerNormal();
+              }}
               style={[
                 styles.signIn,
                 {
@@ -105,11 +200,13 @@ const CardItemDetails = ({route}) => {
                     color: 'green',
                   },
                 ]}>
-               NORMAL
+                NORMAL
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => {}}
+              onPress={() => {
+                handlerHigh();
+              }}
               style={[
                 styles.signIn,
                 {

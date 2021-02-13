@@ -73,7 +73,7 @@ const SignInScreen = ({navigation}) => {
 
     return (
       <View style={styles.container}>
-          <StatusBar backgroundColor='#FF6347' barStyle="light-content"/>
+          <StatusBar backgroundColor='#6201EE' barStyle="light-content"/>
         <View style={styles.header}>
             <Text style={styles.text_header}>Register Now!</Text>
         </View>
@@ -191,7 +191,7 @@ const SignInScreen = ({navigation}) => {
                     onPress={() => {}}
                 >
                 <LinearGradient
-                    colors={['#FFA07A', '#FF6347']}
+                    colors={['#6201EE', '#8440E6']}
                     style={styles.signIn}
                 >
                     <Text style={[styles.textSign, {
@@ -224,7 +224,7 @@ export default SignInScreen;
 const styles = StyleSheet.create({
     container: {
       flex: 1, 
-      backgroundColor: '#FF6347'
+      backgroundColor: '#fff'
     },
     header: {
         flex: 1,
@@ -241,7 +241,7 @@ const styles = StyleSheet.create({
         paddingVertical: 30
     },
     text_header: {
-        color: '#fff',
+        color: '#6201EE',
         fontWeight: 'bold',
         fontSize: 30
     },

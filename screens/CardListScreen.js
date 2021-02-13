@@ -5,6 +5,9 @@ import Card from '../components/Card';
 
 const CardListScreen = ({navigation}) => {
 
+
+  
+
     const renderItem = ({item}) => {
         return (
             <Card 
@@ -22,7 +25,6 @@ const CardListScreen = ({navigation}) => {
             renderItem={renderItem}
             keyExtractor={item => item.id}
         />
-        
       </View>
     );
 };

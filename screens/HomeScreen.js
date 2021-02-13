@@ -31,7 +31,7 @@ import StarRating from '../components/StarRating';
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import {hardware} from '../model/Hardware';
 
-const HomeScreen = ({navigation}) => {
+const HomeScreen = ({navigation, props}) => {
   const theme = useTheme();
 
   const initialHardware = {
