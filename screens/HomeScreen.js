@@ -2,32 +2,16 @@ import React from 'react';
 import {
   View,
   Text,
-  Image,
   StyleSheet,
-  StatusBar,
   TouchableOpacity,
   ScrollView,
-  Animated,
-  Fragment,
   Dimensions
 } from 'react-native';
 import {
   LineChart,
-  BarChart,
-  PieChart,
-  ProgressChart,
-  ContributionGraph,
-  StackedBarChart
 } from "react-native-chart-kit";
 
 import {useTheme} from '@react-navigation/native';
-
-import Swiper from 'react-native-swiper';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Fontisto from 'react-native-vector-icons/Fontisto';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import StarRating from '../components/StarRating';
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import {hardware} from '../model/Hardware';
 
@@ -41,7 +25,7 @@ const HomeScreen = ({navigation, props}) => {
   const [state, setState] = React.useState(initialHardware);
 
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, justifyContent:'space-between'}}>
       <View style={[styles.section, {height: 170}]}>
         <MapView
           provider={PROVIDER_GOOGLE}

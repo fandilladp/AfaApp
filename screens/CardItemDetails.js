@@ -35,6 +35,32 @@ const CardItemDetails = ({route}) => {
     waterflow: 0,
   });
 
+  const handlerOff = () => {
+    axios
+      .put('https://afaapp.herokuapp.com/posts/0', {
+        coordinate: {
+          latitude: 0,
+          longitude: 0,
+        },
+        title: '',
+        desc: 'off',
+        waterflow: 0,
+      })
+      .then(function(response) {
+        setServoPosisi({
+          coordinate: {
+            latitude: 0,
+            longitude: 0,
+          },
+          title: '',
+          desc: 'off',
+          waterflow: 0,
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  };
   const handlerLow = () => {
     axios
       .put('https://afaapp.herokuapp.com/posts/0', {
@@ -47,15 +73,15 @@ const CardItemDetails = ({route}) => {
         waterflow: 20,
       })
       .then(function(response) {
-       setServoPosisi({
-        coordinate: {
-          latitude: 0,
-          longitude: 0,
-        },
-        title: '',
-        desc: 'low',
-        waterflow: 20,
-       })
+        setServoPosisi({
+          coordinate: {
+            latitude: 0,
+            longitude: 0,
+          },
+          title: '',
+          desc: 'low',
+          waterflow: 20,
+        });
       })
       .catch(function(error) {
         console.log(error);
@@ -73,15 +99,15 @@ const CardItemDetails = ({route}) => {
         waterflow: 40,
       })
       .then(function(response) {
-       setServoPosisi({
-        coordinate: {
-          latitude: 0,
-          longitude: 0,
-        },
-        title: '',
-        desc: 'normal',
-        waterflow: 40,
-       })
+        setServoPosisi({
+          coordinate: {
+            latitude: 0,
+            longitude: 0,
+          },
+          title: '',
+          desc: 'normal',
+          waterflow: 40,
+        });
       })
       .catch(function(error) {
         console.log(error);
@@ -89,29 +115,29 @@ const CardItemDetails = ({route}) => {
   };
   const handlerHigh = () => {
     axios
-    .put('https://afaapp.herokuapp.com/posts/0', {
-      coordinate: {
-        latitude: 0,
-        longitude: 0,
-      },
-      title: '',
-      desc: 'High',
-      waterflow: 60,
-    })
-    .then(function(response) {
-     setServoPosisi({
-      coordinate: {
-        latitude: 0,
-        longitude: 0,
-      },
-      title: '',
-      desc: 'High',
-      waterflow: 60,
-     })
-    })
-    .catch(function(error) {
-      console.log(error);
-    });
+      .put('https://afaapp.herokuapp.com/posts/0', {
+        coordinate: {
+          latitude: 0,
+          longitude: 0,
+        },
+        title: '',
+        desc: 'High',
+        waterflow: 60,
+      })
+      .then(function(response) {
+        setServoPosisi({
+          coordinate: {
+            latitude: 0,
+            longitude: 0,
+          },
+          title: '',
+          desc: 'High',
+          waterflow: 60,
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   };
   return (
     <View style={styles.container}>
@@ -131,8 +157,8 @@ const CardItemDetails = ({route}) => {
             provider={PROVIDER_GOOGLE}
             style={{flex: 1}}
             region={{
-              latitude: itemData.coordinate.latitude,
-              longitude: itemData.coordinate.longitude,
+              latitude: -5.357904019747611,
+              longitude: 105.31436540134686,
               latitudeDelta: 0.00864195044303443,
               longitudeDelta: 0.000142817690068,
             }}>
@@ -159,6 +185,28 @@ const CardItemDetails = ({route}) => {
             flex: 1,
           }}>
           <View style={styles.button}>
+            <TouchableOpacity
+              onPress={() => {
+                handlerOff();
+              }}
+              style={[
+                styles.signIn,
+                {
+                  borderColor: 'red',
+                  borderWidth: 1,
+                  marginTop: 20,
+                },
+              ]}>
+              <Text
+                style={[
+                  styles.textSign,
+                  {
+                    color: 'red',
+                  },
+                ]}>
+                Off
+              </Text>
+            </TouchableOpacity>
             <TouchableOpacity
               onPress={() => {
                 handlerLow();
@@ -210,7 +258,7 @@ const CardItemDetails = ({route}) => {
               style={[
                 styles.signIn,
                 {
-                  borderColor: 'red',
+                  borderColor: 'orange',
                   borderWidth: 1,
                   marginTop: 20,
                 },
@@ -219,7 +267,7 @@ const CardItemDetails = ({route}) => {
                 style={[
                   styles.textSign,
                   {
-                    color: 'red',
+                    color: 'orange',
                   },
                 ]}>
                 HIGH
@@ -269,6 +317,7 @@ const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
     marginTop: 5,
+    marginBottom: 10,
     width: 300,
     borderRadius: 8,
   },
